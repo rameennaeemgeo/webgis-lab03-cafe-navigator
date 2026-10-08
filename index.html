@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Islamabad Café Navigator | WebGIS Lab 03</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">☕</span>
+      <div>
+        <h1>Islamabad Café Navigator</h1>
+        <p>Interactive WebGIS dashboard · find the fastest way to your next cup</p>
+      </div>
+    </div>
+    <span class="badge">WebGIS Lab 03</span>
+  </header>
+
+  <main class="layout">
+
+    <!-- LEFT SIDEBAR: locations -->
+    <aside class="panel left" aria-label="Locations">
+      <h2>Cafés in Islamabad</h2>
+      <p class="hint">Select a café to see its marker and route from you.</p>
+      <ul id="placeList" class="place-list"></ul>
+
+      <h3>Travel mode</h3>
+      <div class="modes" id="modes" role="group" aria-label="Travel mode">
+        <button data-mode="car" class="active">🚗 Drive</button>
+        <button data-mode="bike">🚲 Cycle</button>
+        <button data-mode="foot">🚶 Walk</button>
+      </div>
+
+      <h3>Your start point</h3>
+      <div class="actions">
+        <button id="btnLocate" class="btn">📍 Use my location</button>
+        <button id="btnPick" class="btn ghost">🖱️ Pick on map</button>
+      </div>
+      <p id="locStatus" class="status">Waiting for location…</p>
+    </aside>
+
+    <!-- CENTER: map -->
+    <section class="map-wrap">
+      <div id="map" aria-label="Map"></div>
+      <div class="legend">
+        <span><i class="dot you"></i> You</span>
+        <span><i class="dot cafe"></i> Café</span>
+        <span><i class="line"></i> Route</span>
+      </div>
+      <div id="toast" class="toast" role="status"></div>
+    </section>
+
+    <!-- RIGHT SIDEBAR: student + route info -->
+    <aside class="panel right" aria-label="Student and route details">
+      <div class="student">
+        <div class="avatar">RN</div>
+        <div>
+          <p class="label">Student Name</p>
+          <p class="value">Rameen Naeem</p>
+          <p class="label">ARID Number</p>
+          <p class="value">24-ARID-2433</p>
+        </div>
+      </div>
+      <p class="meta">Assigned city: <b>Islamabad</b> · Category: <b>Café</b></p>
+
+      <h2>Route summary</h2>
+      <div id="summary" class="summary empty">
+        <p>No route yet. Choose a café on the left.</p>
+      </div>
+
+      <h3>Directions</h3>
+      <ol id="steps" class="steps"></ol>
+    </aside>
+
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
