@@ -23,6 +23,9 @@ Interactive WebGIS navigation dashboard built with **Leaflet.js**, **OpenStreetM
 | 4 | Burning Brownie | Beverly Center, Blue Area |
 | 5 | Loafology | Jinnah Avenue, Blue Area |
 
+Travel times are estimates from OSRM using fixed road speeds and do not include live traffic. In a test at about 8:50 AM, driving time was ~40% lower than Google Maps.
+
+
 ## Run locally
 Open the folder in VS Code and start `index.html` with the Live Server extension. Allow location access when the browser asks.
 
